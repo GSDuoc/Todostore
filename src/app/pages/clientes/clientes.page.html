@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar> 
+    <ion-buttons slot="end">
+        <ion-menu-button menu="mainMenu"></ion-menu-button>
+   </ion-buttons>  
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let producto of productos">
+      <img [src]="producto.image" alt="">
+      <ion-label>
+       <h2>{{producto.title}}</h2>
+        <p>{{ producto.price }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  
+</ion-content>
+<app-footer></app-footer>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Captura de Imagen</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+   <ion-button expand="full" (click)="captureImage()">
+    Capturar Imagen
+  </ion-button>
+
+  <div *ngIf="capturedImage" class="image-container">
+    <img [src]="capturedImage" alt="Imagen capturada" />
+  </div>
+
+   <p *ngIf="capturedImage" >{{capturedImage}}</p>
+ 
+</ion-content>

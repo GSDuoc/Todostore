@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>  
+   
+    <app-company-name [companyName]="'TodoStore'"></app-company-name>  
+    <ion-buttons slot="end"> 
+        <ion-menu-button menu="mainMenu"></ion-menu-button>
+   </ion-buttons> 
+  </ion-toolbar> 
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding"> 
+   <app-banner></app-banner>
+  
+
+  <!-- Imagen de usuario y mensaje de bienvenida -->
+  <div class="user-info">
+    <img src="../../assets/img/user.png" alt="User Avatar" class="user-avatar" />
+    <h2><strong>{{ bienvenidos }}</strong><br/> {{ email }}</h2>
+    <span>{{textoPuntos}}</span>
+  </div>
+
+
+  <ion-list>
+    <ion-item *ngFor="let producto of productos">
+      <img [src]="producto.image" alt="">
+      <ion-label>
+        <h2>{{producto.title}}</h2>
+        <p>{{ producto.price }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<app-footer></app-footer>
